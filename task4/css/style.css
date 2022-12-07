@@ -1,0 +1,282 @@
+/* fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap');
+/* ---- premium colors */
+:root{
+  --premiumColor:gray;
+  --premiumColors:rgb(61 65 70 / 90%);
+  --fontColor:hsla(197, 81%, 60%, 0.952);
+}
+/*-----global style */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  list-style: none;
+}
+.color2{
+  background-color: var(--premiumColors);
+}
+a{
+  text-decoration: none;
+  color: var(--premiumColors);
+}
+a:hover{
+  color: var(--fontColor);
+}
+.arrow{
+  background-color: #d2d7dd;
+}
+/*----- ------------------------------------------End global style */
+/*---------------------------------------------------------second header */
+.transition{
+  animation: sticky-top 1.5s  0s 1  backwards ease-out;
+}
+@keyframes sticky-top{
+  0%{transform: translateY(0px);  opacity: 0;}
+  75%{transform: translateY(1px); opacity: 0.5;}
+  100%{transform: translateY(1px); opacity: 1;}
+}
+.Categories{
+  position: relative;
+}
+.CategoriesTable{
+  position: absolute;
+  background-color: #fff;
+  top: 38px;
+  left: 0px;
+  width: 250px;
+  line-height: 40px;
+  font-weight: 600;
+  display: none;
+}
+.Home{
+  position: relative;
+}
+.HomeTable{
+  position: absolute;
+  background-color: #fff;
+  top: 37px;
+  left: 520;
+  width: 250px;
+  line-height: 40px;
+  font-weight: 600;
+  display: none;
+}
+.Courses{
+  position: relative;
+}
+.CoursesTable{
+  position: absolute;
+  background-color: #fff;
+  top: 38px;
+  left: -6px;
+  width: 250px;
+  line-height: 50px;
+  font-weight: 600;
+  display: none;
+}
+.Pages{
+  position: relative;
+}
+.PagesTable{
+  position: absolute;
+  background-color: #fff;
+  top: 36px;
+  left: -16px;
+  width: 250px;
+  line-height: 50px;
+  font-weight: 600;
+  display: none;
+}
+.Layout{
+  position: relative;
+}
+.SingleTable{
+  position: absolute;
+  background-color: #fff;
+  top: 249px;
+  left: 250px;
+  width: 250px;
+  line-height: 50px;
+  font-weight: 600;
+  display: none;
+}
+.Blog{
+  position: relative;
+}
+.BlogTable{
+  position: absolute;
+  background-color: #fff;
+  top: 37px;
+  left: 0px;
+  width: 250px;
+  line-height: 50px;
+  font-weight: 600;
+  display: none;
+}
+ .Pages:hover .PagesTable{
+  display: block;
+}
+ .Blog:hover .BlogTable{
+  display: block;
+}
+ .Home:hover .HomeTable{
+  display: block;
+}
+ .Courses:hover .CoursesTable{
+  display: block;
+}
+ .Categories:hover .CategoriesTable{
+  display: block;
+}
+.CoursesTable ul li:last-child:hover .SingleTable{
+  display: block;
+}
+/* --------------------------------------------------------End second header */
+/* -------------------------------------------------------------first section in page  */
+.addPhoto{
+  margin-top: 15px;
+  width: 100%;
+  height: 230px;
+  background-image: url(/img/page-title.jpg);
+  background-size: cover;
+  position: relative;
+  z-index: -1;
+  color: #fff;
+  
+}
+.addPhoto::after{
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 19, 22, 0.836);
+  z-index: -1;
+}
+/* --------------------------------------------End first section in page  */
+/* ----------------------------------------------------second section with search par */
+.searchInput{
+  position: relative;
+  
+}
+.searchInput input{
+  outline: none;
+  height: 45px;
+  background-color: #ecf0f5;
+}
+.searchIcon{
+  position: absolute;
+  top: 14px;
+  right: 34px;
+  color: #8698ac;
+}
+/* End second section with search par */
+/* ----------------------------------cruds section  */
+.CoastPlace{
+  position: relative;
+  overflow: hidden;
+}
+.CoastPlaceTow{
+  position: absolute;
+  top: 0px;      
+  padding: 3px 20px;
+  background-color: var(--fontColor);
+}
+
+.safety {
+  margin: 20px 0px;
+}
+
+.safety .CoastPlace img{
+  transform: scale(0.999);
+  transition: 0.3s ease-in-out;
+}
+.safety .CoastPlace:hover img{
+  transform: scale(1.1);
+  
+}
+.safety .CoastPlace .CoastPlaceTow{
+  left: -200px;
+  transition: 0.3s ease-in-out;
+}
+.safety .CoastPlace:hover .CoastPlaceTow{
+  left: 0px;
+  transform: scale(1.1);
+  
+}
+.CoastPlace p:hover{
+  color:var(--fontColor) ;
+}
+.CoastPlace a:hover{
+  background-color:var(--fontColor) ;
+}
+@media only screen and (max-width:991px) {
+  .CoastPlaceTow{
+    top: 183px;      
+  }
+}
+@media only screen and (max-width:766px ) {
+  .CoastPlaceTow{
+    top: 307px;      
+  }
+}
+@media only screen and (max-width:469px ) {
+  .CoastPlaceTow{
+    top: 193px;      
+  }
+}
+@media only screen and (min-width:993px ) {
+  .CoastPlaceTow{
+    top: 103px;      
+  }
+}
+@media only screen and (min-width:1200px ) {
+  .CoastPlaceTow{
+    top: 132px;      
+  }
+}
+/*------------------------------------- End cruds section  */
+/* --------------------------------------------------------footer section */
+.hover{
+  position: relative;
+}
+.hover::before{
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 5px;
+  left: 0;
+  height: 10px;
+  width: 0;
+  border-bottom: 2px solid #fff;
+  transition: 0.4s ease-in-out;
+}
+.hover:hover::before{
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 5px;
+  left: 0;
+  height: 10px;
+  border-bottom: 2px solid #fff;
+  width: 100%;
+}
+.angle{
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  border: none;
+}
+.angle:hover{
+  background-color: #576b7b;
+}
+.hoverColor:hover{
+  background-color: var(--fontColor);
+  
+}
+/* End footer section */
+
+
