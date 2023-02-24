@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{{url('css/style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <div class="bg-light">
@@ -83,7 +84,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                         <div class="Home">
                             <li class="nav-item me-3 text-secondary">
-                                <a class="nav-link active text-secondary " aria-current="page" href="#"><i
+                                <a class="nav-link active text-secondary " aria-current="page" href="{{route('content')}}"><i
                                         class="fa- fa-solid fa-angle-down "></i> Home</a>
                             </li>
                             <div class=" HomeTable">

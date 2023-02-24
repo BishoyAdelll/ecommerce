@@ -14,10 +14,8 @@
                 <div class="col-lg-8 text-black-50 col-md-12">
                     <p>Showing 1-6 of 8 results</p>
                 </div>
-
                 <div class="col-lg-4 col-md-12 text-end searchInput">
-                    <input class="form-control me-2  rounded-pill " type="search"
-                           placeholder="Search our Course" aria-label="Search">
+                    <input class="form-control me-2  rounded-pill " type="search" placeholder="Search our Course" aria-label="Search" name="search" id="search">
                     <i class="fa fa-solid fa-search searchIcon"></i>
                 </div>
             </div>
@@ -28,12 +26,13 @@
     <section class="my-5 pt-5 ">
         <div class="container " style="padding-top: 80px; padding-bottom: 60px;">
             <div class="text-center py-4">
-                <h1 class="fw-bold">Recent Courses</h1>
+                <h1 class="fw-bold">All Courses</h1>
                 <p class="text-black-50">Discover Your Perfect Program In Our Courses.</p>
             </div>
-            <div class="row ">
+            <div class="row allData">
+
                 @foreach($courses as $course)
-                    <div class="col-lg-4 col-md-6 col-sm-12 card_width position-relative animation2 mb-5">
+                    <div class="col-lg-4 col-md-6 col-sm-12 card_width position-relative animation2 mb-5 ">
                         <div class="card border-0 shadow  ">
                             <div>
                                 <img src="/storage/{{$course->image}}" class="card-img-top  " alt="...">
@@ -77,10 +76,37 @@
                     </div>
                 @endforeach
 
+                    {{$courses->onEachSide(1)->links()}}
             </div>
 
 
+
+            <div id="content" class="row searchData" >
+
+            </div>
         </div>
     </section>
+    <script type="text/javascript">
+        $('#search').on('keyup',function(){
+            $value=$(this).val()
+            if($value) {
+                $('.allData').hide();
+                $('.searchData').show();
+            }else{
+                $('.allData').show();
+                $('.searchData').hide();
+            }
+           $.ajax({
+
+               type:"get",
+               url:'{{URL::to('search')}}',
+               data:{'search':$value},
+               success:function(data){
+                   console.log(data);
+                   $('#content').html(data);
+               }
+           })
+        })
+    </script>
 
 @endsection
